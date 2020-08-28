@@ -4,9 +4,9 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.linear_model import Lasso
+from sklearn.linear_model import Lasso,Ridge
 from sklearn.metrics import mean_squared_error, r2_score
-import sklearn
+
 
 
 
@@ -23,7 +23,7 @@ class Pipeline:
         self.data=data
         self.split_pct=split_pct
 
-        self.model = Lasso(alpha=0.005, random_state=0)
+        self.model = Ridge(alpha=0.005, random_state=0)
 
 
     def split_data(self,data):
